@@ -1,0 +1,91 @@
+;; checks if 10 5 10 0 is a palindrome sequence
+
+    0 DSP      6
+    2 LDA      5
+    4 LDC      100
+    6 ANEW    
+    7 STO     
+    8 LDA      0
+   10 LDC      0
+   12 STO     
+   13 LDA      3
+   15 INPI    
+   16 LDA      3
+   18 LDV     
+   19 LDC      0
+   21 CNE     
+   22 BZE      49
+   24 LDA      5
+   26 LDV     
+   27 LDA      0
+   29 LDV     
+   30 LDXA    
+   31 LDA      3
+   33 LDV     
+   34 STO     
+   35 LDA      0
+   37 LDA      0
+   39 LDV     
+   40 LDC      1
+   42 ADD     
+   43 STO     
+   44 LDA      3
+   46 INPI    
+   47 BRN      16
+   49 LDA      4
+   51 LDC      1
+   53 STO     
+   54 LDA      1
+   56 LDC      0
+   58 STO     
+   59 LDA      2
+   61 LDA      0
+   63 LDV     
+   64 LDC      1
+   66 SUB     
+   67 STO     
+   68 LDA      1
+   70 LDV     
+   71 LDA_0   
+   72 LDV  
+   72 LDC      1
+   74 SUB     
+   75 CLT     
+   76 BZE      124
+   78 LDA      5
+   80 LDV     
+   81 LDA      1
+   83 LDV     
+   84 LDXA
+   85 LDV     
+   86 LDA      5
+   88 LDV     
+   89 LDA      2
+   91 LDV     
+   92 LDXA    
+   93 LDV     
+   94 CNE     
+   95 BZE      104
+   97 LDA      4
+  99 LDC      0
+  101 STO     
+  102 LDA      1
+  104 LDA      1
+  106 LDV     
+  107 LDC      1
+  109 ADD     
+  110 STO     
+  111 LDA      2
+  113 LDA      2
+  115 LDV     
+  116 LDC      1
+  118 SUB     
+  119 STO     
+  120 BRN      68
+  122 LDA      4
+  124 LDV     
+  125 BZE      133
+  127 PRNS     "Palindromic sequence"
+  129 BRN      134
+  131 PRNS     "Non-palindromic sequence"
+  133 HALT    

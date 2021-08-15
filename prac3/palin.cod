@@ -1,0 +1,92 @@
+ASSEM
+BEGIN
+  {    0 } DSP      6
+  {    2 } LDA      5
+  {    4 } LDC      100
+  {    6 } ANEW    
+  {    7 } STO     
+  {    8 } LDA      0
+  {   10 } LDC      0
+  {   12 } STO     
+  {   13 } LDA      3
+  {   15 } INPI    
+  {   16 } LDA      3
+  {   18 } LDV     
+  {   19 } LDC      0
+  {   21 } CNE     
+  {   22 } BZE      49
+  {   24 } LDA      5
+  {   26 } LDV     
+  {   27 } LDA      0
+  {   29 } LDV     
+  {   30 } LDXA    
+  {   31 } LDA      3
+  {   33 } LDV     
+  {   34 } STO     
+  {   35 } LDA      0
+  {   37 } LDA      0
+  {   39 } LDV     
+  {   40 } LDC      1
+  {   42 } ADD     
+  {   43 } STO     
+  {   44 } LDA      3
+  {   46 } INPI    
+  {   47 } BRN      16
+  {   49 } LDA      4
+  {   51 } LDC      1
+  {   53 } STO     
+  {   54 } LDA      1
+  {   56 } LDC      0
+  {   58 } STO     
+  {   59 } LDA      2
+  {   61 } LDA      0
+  {   63 } LDV     
+  {   64 } LDC      1
+  {   66 } SUB     
+  {   67 } STO     
+  {   68 } LDA      1
+  {   70 } LDV     
+  {   71 } LDA_0   
+  {   72 } LDV     
+  {   73 } LDC      1
+  {   75 } SUB     
+  {   76 } CLT     
+  {   77 } BZE      124
+  {   79 } LDA      5
+  {   81 } LDV     
+  {   82 } LDA      1
+  {   84 } LDV     
+  {   85 } LDXA    
+  {   86 } LDV     
+  {   87 } LDA      5
+  {   89 } LDV     
+  {   90 } LDA      2
+  {   92 } LDV     
+  {   93 } LDXA    
+  {   94 } LDV     
+  {   95 } CNE     
+  {   96 } BZE      104
+  {   98 } LDA      4
+  {  100 } LDC      0
+  {  102 } STO     
+  {  103 } LDA      1
+  {  105 } LDA      1
+  {  107 } LDV     
+  {  108 } LDC      1
+  {  110 } ADD     
+  {  111 } STO     
+  {  112 } LDA      2
+  {  114 } LDA      2
+  {  116 } LDV     
+  {  117 } LDC      1
+  {  119 } SUB     
+  {  120 } STO     
+  {  121 } BRN      68
+  {  123 } LDA      4
+  {  125 } LDV     
+  {  126 } BZE      133
+  {  128 } PRNS     "Palindromic sequence"
+  {  130 } BRN      134
+  {  132 } PRNS     "Non-palindromic sequence"
+  {  134 } HALT    
+END.

@@ -1,0 +1,73 @@
+; Read a sequence of characters terminated by a period and report whether
+; they form a palindrome (one that reads the same from either end)
+
+; Examples:   too hot to hoot.  is palindromic
+;             1234432.          is non-palindromic
+; P.D. Terry, Rhodes University
+; Uses extended opcode set created in Prac 3, 2021
+
+    0  DSP      6
+    2  LDC      100
+    4  ANEW
+    5  STL      5     char [] str = new char [100];
+    7  LDC_0
+    8  STL_0          n = 0;
+    9  LDA_3
+   10  INPC           read(ch)
+   11  LDL_3
+   12  LDC      46
+   14  CNE
+   15  BZE      36    while (ch != ',') {
+   17  LDL_3
+   18  LDC      32
+   20  CGT
+   21  BZE      32      if (ch > ' ') {
+   23  LDL      5
+   25  LDL_0
+   26  LDXA
+   27  LDL_3
+   28  LOW
+   29  STOC               str[n] = lower(ch);
+   30  LDA_0
+   31  INC                n++;
+   32  LDA_3            }
+   33  INPC             read(ch);
+   34  BRN      11    } // while
+   36  LDC_1
+   37  STL      4     isPalinDrome = true;
+   39  LDC_0
+   40  STL_1          low = 0;
+   41  LDL_0
+   42  LDC_1
+   43  SUB
+   44  STL_2          high = n -1;
+   45  LDL      4
+   47  NEG
+   48  BZE      77    while (isPalindrome
+   50  LDL_1
+   51  LDL_2
+   52  CLT
+   53  BZE      77      && low < high) {
+   55  LDL      5
+   57  LDL_1
+   58  LDXA
+   59  LDV                 // str[low]
+   60  LDL      5
+   62  LDL_2
+   63  LDXA
+   64  LDV                 // str[high]
+   65  CNE              if (str[low] != str[high])
+   66  BZE      71
+   68  LDC_0              isPalindrome = false;
+   69  STL      4
+   71  LDA_1
+   72  INC              low++;
+   73  LDA_2
+   74  DEC              high--;
+   75  BRN      45    } // while
+   77  LDL      4
+   79  BZE      85    if (isPalindrome)
+   81  PRNS     "Palindromic string"
+   83  BRN      87    else
+   85  PRNS     "Non-palindromic string"
+   87  HALT
